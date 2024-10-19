@@ -1,0 +1,47 @@
+
+<form [formGroup]="workoutExerciseForm" (submit)="onSubmit()">
+  <div>שים לב! תוכל להוסיף תרגיל בהתאם לשרירים שבחרת</div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>תרגיל</mat-label>
+      <input type="text"
+             placeholder="הוסף"
+             aria-label="תרגיל"
+             matInput
+             required="true"
+
+             formControlName="name"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+          <mat-option [value]="option.name">{{option.name}}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always">
+      <mat-label>סטים</mat-label>
+      <input formControlName="setsReps" required matInput type="number" class="example-right-align" placeholder="1" />
+      <!-- <span matTextPrefix>$&nbsp;</span> -->
+      <!-- <span matTextSuffix>.00</span> -->
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always">
+      <mat-label>חזרות</mat-label>
+      <input formControlName="reps" required matInput type="number" class="example-right-align" />
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always">
+      <mat-label>משקל</mat-label>
+      <input formControlName="weghit" required matInput type="number" class="example-right-align" placeholder="1" />
+    </mat-form-field>
+
+
+    <button type="submit" mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+
+  </div>
+
+</form>

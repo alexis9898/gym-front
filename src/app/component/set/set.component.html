@@ -1,0 +1,21 @@
+<div dir="rtl">
+
+<h2 mat-dialog-title>עדכן סט</h2>
+<mat-dialog-content>
+  <mat-form-field floatLabel="always">
+    <mat-label>חזרות</mat-label>
+    <input [formControl]="reps"  required matInput type="number" class="example-right-align" />
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always">
+    <mat-label>משקל</mat-label>
+    <input [formControl]="weight" required matInput type="number" class="example-right-align" placeholder="1" />
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onSaveClick()" cdkFocusInitial>עדכן</button>
+  <button mat-button (click)="onNoClick()">ביטול</button>
+</mat-dialog-actions>
+
+</div>
