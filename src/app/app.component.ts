@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MaterialModule } from './Module/material.module';
+import { HomeComponent } from './component/home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MaterialModule],
+  imports: [RouterOutlet,HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Jym-front';
+  title = 'pool-hadera';
 }
