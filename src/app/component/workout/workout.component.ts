@@ -176,6 +176,7 @@ export class WorkoutComponent implements OnInit, AfterViewInit {
   add(workout: Workout) {
     this.workoutService.post(workout).subscribe((data) => {
       console.log(data);
+      
     });
   }
   update(workout: Workout) {
